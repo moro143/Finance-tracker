@@ -1,6 +1,6 @@
 import psycopg2
 
-def connectdb(database="Financedb", 
+def connectdb(database="financedb", 
                 user="myusername", 
                 password="mypassword",
                 host="localhost",

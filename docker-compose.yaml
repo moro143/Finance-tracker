@@ -1,0 +1,15 @@
+version: '3'
+services:
+  postegres:
+    image: postgres
+    restart: always
+    ports:
+      - 5433:5432
+    environment:
+      - POSTGRES_USER=myusername
+      - POSTGRES_PASSWORD=mypassword
+    volumes:
+      - postegres-data:/var/lib/postgresql/data
+volumes:
+  postegres-data:
+    driver: local

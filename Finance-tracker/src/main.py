@@ -22,7 +22,7 @@ def conprint(func):
 def get_users():
     conn = sql_commands.connectdb()
     result = sql_commands.select(conn,
-                        'Users', 
+                        'users', 
                         ['user_id', 'name', 'created_on'])
     conn.close()
     return result
@@ -31,7 +31,7 @@ def get_users():
 def get_categories():
     conn = sql_commands.connectdb()
     result = sql_commands.select(conn,
-                        'Categories', 
+                        'categories', 
                         ['category_id', 'name', 'created_on'])
     conn.close()
     return result
