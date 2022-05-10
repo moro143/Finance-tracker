@@ -1,4 +1,5 @@
 import time
+import datetime
 
 def timeis(func):
     def wrap(*args, **kwargs):
@@ -12,7 +13,19 @@ def timeis(func):
 def printList(func):
     def wrap(*args, **kwargs):
         result = func(*args, **kwargs)
-        print(*args[1])
+        txt = '|'
+        underline = '='
+        for i in args[1]:
+            txt += ' {:^11} |'.format(i)
+            underline += 14*'='
+        print(txt)
+        print(underline)
         for i in result:
-            print([str(x) for x in i])
+            txt = '|'
+            for v in i:
+                if isinstance(v, datetime.datetime):
+                    txt += ' {:^11} |'.format(v.strftime('%d/%m/%Y'))
+                else:
+                    txt += ' {:^11} |'.format(str(v))
+            print(txt)
     return wrap

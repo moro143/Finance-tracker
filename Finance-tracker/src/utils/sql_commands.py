@@ -34,7 +34,7 @@ def insertinto(conn, table, values):
     Args:
         conn (conn): psycopg2 connection
         table (str): name of table to insert into
-        values (dict): {column1: value1, column2: value2, ...}
+        values (dict{str: str}): {column1: value1, column2: value2, ...}
     """
     cmdcolumns = ""
     cmdvalues = ""
