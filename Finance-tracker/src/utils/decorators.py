@@ -16,16 +16,16 @@ def printList(func):
         txt = '|'
         underline = '='
         for i in args[1]:
-            txt += ' {:^11} |'.format(i)
-            underline += 14*'='
+            txt += ' {:^20} |'.format(i)
+            underline += 23*'='
         print(txt)
         print(underline)
         for i in result:
             txt = '|'
             for v in i:
                 if isinstance(v, datetime.datetime):
-                    txt += ' {:^11} |'.format(v.strftime('%d/%m/%Y'))
+                    txt += ' {:^20} |'.format(v.strftime('%d/%m/%Y'))
                 else:
-                    txt += ' {:^11} |'.format(str(v))
+                    txt += ' {:^20} |'.format(str(v))
             print(txt)
     return wrap
